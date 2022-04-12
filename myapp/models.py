@@ -18,6 +18,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(64), unique=True, index=True)
     username = db.Column(db.String(64), unique=True, index=True)
     password_hash = db.Column(db.String(128))
+    wolves = db.relationship('Wolves', backref='author', lazy=True)
 
     def __init__(self, email, username, password):
         self.email = email
@@ -31,3 +32,18 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return f"Username {self.username}"
 
+class Wolves(db.Model):
+    __tablename__ = 'wolves'
+    id = db.Column(db.Integer, primary_key=True)
+    date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    name = db.Column(db.String(140), nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+    def __init__(self, name, description, user_id):
+        self.name = name
+        self.description = description
+        self.user_id = user_id
+    
+    def __repr__(self):
+        return f"Post ID: {self.id} -- Date: {self.date} --- Wolf description: {self.description}"
