@@ -24,28 +24,28 @@ def wolf(wolf_id):
     wolf = Wolves.query.get_or_404(wolf_id) 
     return render_template('wolf.html', name=wolf.name, date=wolf.date, wolf=wolf)
 
-@wolves.route('/<int:wolves_id>/update',methods=['GET','POST'])
-@login_required
-def update_wolf(wolves_id):
-    wolves = Wolves.query.get_or_404(wolves_id)
+# @wolves.route('/<int:wolves_id>/update',methods=['GET','POST'])
+# @login_required
+# def update_wolf(wolves_id):
+#     wolves = Wolves.query.get_or_404(wolves_id)
 
-    if wolves.author != current_user:
-        abort(403)
+#     if wolves.author != current_user:
+#         abort(403)
 
-    form = WolvesForm()
+#     form = WolvesForm()
 
-    if form.validate_on_submit():
-        wolves.name = form.name.data
-        wolves.description = form.description.data
-        db.session.commit()
-        flash('Wolf Updated')
-        return redirect(url_for('wolves.wolf',wolves_id=wolf.id))
+#     if form.validate_on_submit():
+#         wolves.name = form.name.data
+#         wolves.description = form.description.data
+#         db.session.commit()
+#         flash('Wolf Updated')
+#         return redirect(url_for('wolves.wolf',wolves_id=wolf.id))
 
-    elif request.method == 'GET':
-        form.name.data = wolves.name
-        form.description.data = wolves.description
+#     elif request.method == 'GET':
+#         form.name.data = wolves.name
+#         form.description.data = wolves.description
 
-    return render_template('create_wolf.html',name='Updating',form=form)
+#     return render_template('create_wolf.html',name='Updating',form=form, id=wolves_id)
 
 @wolves.route('/<int:wolves_id>/delete',methods=['GET','POST'])
 @login_required

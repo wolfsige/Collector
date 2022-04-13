@@ -7,8 +7,6 @@
   <p>{{wolf.description}}</p>
    {% if wolf.author == current_user %}
      <div>
-       <a class="btn btn-secondary" href="{{ url_for('wolves.update_wolf', wolves_id=wolf.id) }}">Update</a>
-       <br>
        <form action="{{ url_for('wolves.delete_wolf', wolves_id=wolf.id) }}" method="POST">
         <input class="btn btn-danger" type="submit" value="Delete">
       </form>
