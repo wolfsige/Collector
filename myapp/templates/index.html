@@ -1,7 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="jumbotron">
-        <h1>Party!</h1>
+        <h1>Wolf index</h1>
     </div>
-   
+    <div class="container">
+        {% for wolf in wolves.items %}
+            <div class="card">
+                <div class="car-boy">
+                    <h2>
+                        <a class="card-title" href="{{url_for('wolves.create_wolf', wolf_id=wolf.id)}}">{{wolf.name}}</a>
+                        <a href="{{url_for('users.user_posts', username=wolf.username)}}">Added by: {{wolf.username}}</a>
+                    </h2>
+                    <p>Published on: {{wolf.date.strftime('%Y - %m - %d')}}</p>
+                    <a class="btn btn-primary" href="{{url_for('wolves.wolf', wolf_id=wolf.id)}}">Inspect Wolf</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <nav aria-label="Page Navigation example">
+        <ul class="pagination justify-content-center">
+            {% for page_num in wolves.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                {% if wolves.page == page_num %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="{{url_for('core.index', page=page_num)}}">{{ page_num }}</a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="{{url_for('core.index', page=page_num)}}">{{ page_num }}</a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
 {% endblock %}

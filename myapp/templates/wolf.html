@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h1>{{ wolf.name }}</h1>
+  <h2>Created by: {{wolf.author.username}}</h2>
+  <h3>Published: {{ wolf.date.strftime('%B %d, %Y') }}</h3>
+  <p>{{wolf.description}}</p>
+   {% if wolf.author == current_user %}
+     <div>
+       <a class="btn btn-secondary" href="{{ url_for('wolves.update_wolf', wolves_id=wolf.id) }}">Update</a>
+       <br>
+       <form action="{{ url_for('wolves.delete_wolf', wolves_id=wolf.id) }}" method="POST">
+        <input class="btn btn-danger" type="submit" value="Delete">
+      </form>
+     </div>
+   {% endif %}
+</div>
+{% endblock content %}
