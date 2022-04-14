@@ -1,0 +1,56 @@
+html {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  color: red;
+  text-align: center;
+  background-color: rgba(0, 0, 0, .45);
+  border-radius: 50px;
+  width: 200px;
+}
+
+div.car-boy {
+  text-align: center;
+  color: black;
+  width: 300px;
+  height: 300px;
+  background-image: url(./postit\ note.png);
+  background-size: 500px 400px;
+  background-position: center;
+}
+
+div.car-boy-content {
+  padding-top: 75px;
+  padding-right: 30px;
+}
+
+div.card {
+  width: 300px;
+  height: 300px;
+  background-color: rgba(0, 0, 0, .0);
+  border: none;
+}
+
+div.container {
+  
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+body {
+  background-image: url(./woodboards.jpg);
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: cover;
+}
+
+/* #background {
+  background-image: url(./corkboard\ 2.png);
+  background-repeat: no-repeat;
+  background-size: fit;
+} */

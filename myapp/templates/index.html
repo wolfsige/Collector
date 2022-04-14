@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<link rel="stylesheet" href="../static/index.css">
 <div class="jumbotron">
     <h1>Wolf index</h1>
 </div>
@@ -7,14 +8,18 @@
     {% for wolf in wolves.items %}
     <div class="card">
         <div class="car-boy">
-            <h2>
-                {{wolf.name}} <br />
-            </h2>
-            <h5>
-                Created By: {{wolf.author.username}}
-            </h5>
-            <p>Published on: {{wolf.date.strftime('%Y - %m - %d')}}</p>
-            <a class="btn btn-primary" href="{{url_for('wolves.wolf', wolf_id=wolf.id)}}">Inspect Wolf</a>
+            <div class="car-boy-content">
+                <div id="background">
+                    <h2>
+                        {{wolf.name}} <br />
+                    </h2>
+                    <h5>
+                        Created By: {{wolf.author.username}}
+                    </h5>
+                    <p>Published on: {{wolf.date.strftime('%Y - %m - %d')}}</p>
+                    <a class="btn btn-primary" href="{{url_for('wolves.wolf', wolf_id=wolf.id)}}">Inspect Wolf</a>
+                </div>
+            </div>
         </div>
     </div>
     {% endfor %}
