@@ -34,7 +34,6 @@ div.card {
 }
 
 div.container {
-  
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -45,12 +44,5 @@ div.container {
 body {
   background-image: url(./woodboards.jpg);
   background-repeat: no-repeat;
-  /* background-position: center; */
   background-size: cover;
 }
-
-/* #background {
-  background-image: url(./corkboard\ 2.png);
-  background-repeat: no-repeat;
-  background-size: fit;
-} */
