@@ -5,12 +5,12 @@ from myapp.models import Wolves
 
 core = Blueprint('core', __name__)
 
-@core.route('/')
+@core.route('/info')
 def index():
     page = request.args.get('page', 1, type=int)
     wolves = Wolves.query.order_by(Wolves.date.desc()).paginate(page=page, per_page=3)
     return render_template('index.html', wolves=wolves)
 
-@core.route('/info')
+@core.route('/')
 def info():
     return render_template('info.html')
