@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-   
-<form method="POST">
-    {{form.hidden_tag()}}
-    {{form.email.label}}{{form.email}}<br>
-    {{form.username.label}}{{form.username}}<br>
-    {{form.password.label}}{{form.password}}<br>
-    {{form.pass_confirm.label}}{{form.pass_confirm}}<br>
-    {{form.submit()}}
-</form>
+<link rel="stylesheet" href="../static/register.css">
+<div class="formdiv">
+    <form method="POST">
+        {{form.hidden_tag()}}
+        {{form.email.label}}<br />{{form.email}}<br>
+        {{form.username.label}}<br />{{form.username}}<br>
+        {{form.password.label}}<br />{{form.password}}<br>
+        {{form.pass_confirm.label}}<br />{{form.pass_confirm}}<br>
+        <div class="button">
+            {{form.submit(class="btn btn-outline-info")}}
+        </div>
+    </form>
+</div>
 {% endblock %}
