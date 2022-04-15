@@ -4,11 +4,11 @@ html {
 }
 
 h1 {
-  color: red;
+  color: rgb(255, 255, 255);
   text-align: center;
   background-color: rgba(0, 0, 0, .45);
   border-radius: 50px;
-  width: 200px;
+  width: 375px;
 }
 
 div.car-boy {
