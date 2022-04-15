@@ -1,0 +1,13 @@
+.all-forms {
+  background-color: rgba(0, 0, 0, .45);
+  width: 400px;
+  color: white;
+  padding: 10px;
+}
+
+div.container{
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
