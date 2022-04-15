@@ -1,0 +1,13 @@
+.jumbotron {
+  color: white;
+  background-color: rgba(0, 0, 0, .45);
+  border-radius: 50px;
+  width: 600px;
+  padding: 20px;
+}
+
+div.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
