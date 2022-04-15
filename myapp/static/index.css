@@ -39,6 +39,7 @@ div.container {
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 10px;
 }
 
 body {
