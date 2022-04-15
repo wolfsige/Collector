@@ -15,3 +15,4 @@ Wolf Collector is here to track all of your pack members. never lose track of an
 - Make it mobile friendly
 - Add picture uploads
 - Add user's created wolves under their account 
+- Better Navbar
