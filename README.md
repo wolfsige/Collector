@@ -16,3 +16,5 @@ Wolf Collector is here to track all of your pack members. never lose track of an
 - Add picture uploads
 - Add user's created wolves under their account 
 - Better Navbar
+- Add a check to make names that start with lowercase letters uppercase
+- Fix wolf names overflowing out of post
