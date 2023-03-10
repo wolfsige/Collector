@@ -1,4 +1,4 @@
-# [Wolf Collector](https://wolf-collector.herokuapp.com/)
+# [Wolf Collector](https://wolf-collector.onrender.com)
 
 
 ## 🚀 Info:
